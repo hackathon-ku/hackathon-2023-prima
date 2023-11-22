@@ -2,7 +2,7 @@ import React from 'react'
 import Tabbar from '../components/Tabbar'
 import { useNavigate } from 'react-router-dom';
 import BackBtn from '../components/BackBtn';
-import { Box, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 
 import photoImg from '../assets/photo.png';
 
@@ -19,6 +19,7 @@ function Alert() {
                     borderRadius: '20px',
                     padding: '20px',
                     display: "flex",
+                    flexDirection: "column",
                     justifyContent: "center",   
                     alignItems: "center",
                     minHeight: "300px",
@@ -30,15 +31,45 @@ function Alert() {
                     <Typography>สถานที่เกิดเหตุ</Typography>
                     <TextField id="outlined-basic" label="ระบุสถานที่" variant="outlined" sx={{
                         width: '100%',
-                        borderRadius: '20px'
-                    }} />
+                        mt: '3%',
+                        '& .MuiOutlinedInput-root': {
+                                '&:hover fieldset': {
+                                    borderColor: '#104946',
+                                },
+                            },
+                        }} InputLabelProps={{
+                            style: {
+                                color: 'grey',
+                            }
+                        }}
+                    />
                 </Box>
                 <Box>
                     <Typography>รายละเอียดเหตุการณ์</Typography>
                     <TextField id="outlined-basic" label="รายละเอียด" variant="outlined" sx={{
-                        width: '100%',
-                        borderRadius: '20px'
-                    }}/>
+                            width: '100%',
+                            mt: '3%',
+                            '& .MuiOutlinedInput-root': {
+                                '&:hover fieldset': {
+                                    borderColor: '#104946',
+                                },
+                            },
+                        }} InputLabelProps={{
+                            style: {
+                                color: 'grey',
+                            }
+                        }}/>
+                </Box>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                }}>
+                    <Button sx={{
+                    backgroundColor: '#229c96',
+                    color: '#ffff',
+                    width: '20%',
+                    marginLeft: 'auto'
+                    }}>Submit</Button>
                 </Box>
             </Stack>
             <Tabbar />
