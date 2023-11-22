@@ -42,7 +42,7 @@ function HomePage() {
             <Grid>
                 <div style={{marginLeft: 25, marginTop: 20, marginBottom: 0}}> Announce </div>
             </Grid>
-            <Grid container justifyContent={'center'} style={{marginTop: 20}} >
+            <Grid container justifyContent={'center'} style={{marginTop: 20}}  >
                 <Box sx={{width: '342px', height: '134px', bgcolor: '#104946', borderRadius: '25px', top:'20px'}}>
 
                 </Box>
