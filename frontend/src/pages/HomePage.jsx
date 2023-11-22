@@ -55,11 +55,22 @@ function HomePage() {
         <Stack>
             <div style = {{marginLeft: 25, marginTop: 20, }}> Catagories </div>
             <Grid container rowSpacing={6} columnSpacing={{xs:2 , sm:3, md:4}}>
-                <Grid item xs={6} md={8} style={{marginLeft: 40, marginTop: 20}}>
-                <Box>
-                    <img src = {img_path + '/map.png'} style={{width: '40%', height: 'auto'}}/>
-                </Box>
+               <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={img_path+'/schedule.png'} style={{ width: '60%', height: 'auto' }} alt="Home Icon" />
+                    </Box>
                 </Grid>
+                <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={img_path+'/map.png'} style={{ width: '40%', height: 'auto' }} alt="Home Icon" />
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={img_path+'/activity-trans.png'} style={{ width: '50%', height: 'auto' }} alt="Home Icon" />
+                    </Box>
+                </Grid>
+                
             </Grid>
 
         </Stack>
