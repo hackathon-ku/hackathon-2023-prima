@@ -73,6 +73,7 @@ function Alert() {
                 </Box>
             </Stack>
             <Tabbar />
+            
         </div>
     )
 }
