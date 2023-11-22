@@ -2,11 +2,12 @@ import React from 'react'
 import Tabbar from '../components/Tabbar'
 import { useNavigate } from 'react-router-dom';
 import BackBtn from '../components/BackBtn';
-import { Box, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 
 import photoImg from '../assets/photo.png';
+import TxtField from '../components/TxtField';
 
-function Alert() {
+function KuAlert() {
     return (
         <div>
             <BackBtn />
@@ -19,7 +20,8 @@ function Alert() {
                     borderRadius: '20px',
                     padding: '20px',
                     display: "flex",
-                    justifyContent: "center",   
+                    flexDirection: "column",
+                    justifyContent: "center",
                     alignItems: "center",
                     minHeight: "300px",
                 }}>
@@ -28,17 +30,22 @@ function Alert() {
                 </Box>
                 <Box>
                     <Typography>สถานที่เกิดเหตุ</Typography>
-                    <TextField id="outlined-basic" label="ระบุสถานที่" variant="outlined" sx={{
-                        width: '100%',
-                        borderRadius: '20px'
-                    }} />
+                    <TxtField label="ระบุสถานที่"/>
                 </Box>
                 <Box>
                     <Typography>รายละเอียดเหตุการณ์</Typography>
-                    <TextField id="outlined-basic" label="รายละเอียด" variant="outlined" sx={{
-                        width: '100%',
-                        borderRadius: '20px'
-                    }}/>
+                    <TxtField label="รายละเอียด"/>
+                </Box>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                }}>
+                    <Button sx={{
+                        backgroundColor: '#229c96',
+                        color: '#ffff',
+                        width: '20%',
+                        marginLeft: 'auto'
+                    }}>Submit</Button>
                 </Box>
             </Stack>
             <Tabbar />
@@ -46,4 +53,4 @@ function Alert() {
     )
 }
 
-export default Alert
+export default KuAlert

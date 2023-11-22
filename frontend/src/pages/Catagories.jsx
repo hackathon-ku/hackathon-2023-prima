@@ -11,12 +11,11 @@ function Catagories() {
     const navigation = useNavigate();
 
     return (
-        <>
+        <div style={{marginBottom: '15%'}}>
             <Stack style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', margin: 16, paddingTop: 10}}>
                 <ArrowBackIosNewIcon onClick={() => { navigation("/") }} />
                 <Typography>edit</Typography>
             </Stack>
-
             <Grid container rowSpacing={6} columnSpacing={{ xs: 2, sm: 3, md: 4 }} padding={0} mt={1}>
                 <Grid item xs={4}>
                     <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -90,10 +89,10 @@ function Catagories() {
                         <Typography style={centeredTextStyle}>Ku Alert</Typography>
                     </Box>
                 </Grid>
+            
             </Grid>
-
             <Tabbar />
-        </>
+        </div>
     )
 
 }

@@ -1,28 +1,31 @@
 const express = require('express');
-const app = express();
-const mysql = require('mysql');
+const fs = require('fs/promises');
 const cors = require('cors');
-
+const app = express();
 app.use(cors());
-app.use(express.json());
 
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "studentSystem"
+
+app.get('/students', async (req, res) => {
+  try {
+    const data = await fs.readFile('./data/students.json', 'utf-8');
+    const jsonData = JSON.parse(data);
+    res.json(jsonData);
+  } catch (error) {
+    console.error('Error reading JSON file:', error);
+    res.status(500).json({ error: 'Internal Server Error'});
+  }
+});
+app.get('/subjects', async (req, res) => {
+  try {
+    const data = await fs.readFile('./data/subjects.json', 'utf-8');
+    const jsonData = JSON.parse(data);
+    res.json(jsonData);
+  } catch (error) {
+    console.error('Error reading JSON file:', error);
+    res.status(500).json({ error: 'Internal Server Error'});
+  }
 });
 
-app.get('/student', (req, res) => {
-    db.query("SELECT * FROM student", (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {    
-            res.send(result);
-        }   
-    });
+app.listen(5000, () => {
+  console.log(`Server listening at http://localhost:5000`);
 });
-
-app.listen('5000', () => {
-    console.log('server is run on port 5000')
-})

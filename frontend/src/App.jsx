@@ -5,9 +5,7 @@ import Catagories from './pages/Catagories';
 
 function App() {
   return (
-    <>
       <HomePage/>
-    </>
   );
 }
 

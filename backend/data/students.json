@@ -1,0 +1,21 @@
+[
+    {
+        "student_id": "6510451131",
+        "first_name": "Ithikorn",
+        "last_name": "Ungniyom",
+        "age": 19,
+        "year": 2,
+        "faculty_id": "D",
+        "department_id": "14"
+    },
+    {
+        "student_id": "6510450658",
+        "first_name": "Pinpawat",
+        "last_name": "Limsuwat",
+        "age": 20,
+        "year": 2,
+        "faculty_id": "D",
+        "department_id": "14"
+    }
+
+]

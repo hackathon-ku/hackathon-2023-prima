@@ -29,7 +29,7 @@ function ActivityTranscript() {
     return (
         <div>
             <BackBtn/>
-            <Stack direction='column' spacing={4}
+            <Stack direction='column' spacing={3}
             >
                 <Typography variant='h4' style={centeredTextStyle}>Activity Transcript</Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>
