@@ -19,7 +19,7 @@ function Tabbar() {
             <img src={homeImg} style={{ width: '24px', height: '24px' }} alt="Home Icon" />
             <Typography>Home</Typography>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => {navigation("/pages/Catagories")}}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img src={cardImg} style={{ width: '24px', height: '24px' }} alt="Card Icon" />
             <Typography>Card</Typography>
           </div>

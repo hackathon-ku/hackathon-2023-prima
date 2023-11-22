@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Catagories from './pages/Catagories.jsx';
 import ActivityTranscript from './pages/ActivityTranscript.jsx';
 import Planner from './pages/Planner.jsx';
+import Alert from './pages/Alert.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     path: "/pages/Planner",
     element: <Planner/>
   },
+  {
+    path: "/pages/Alert",
+    element: <Alert/>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

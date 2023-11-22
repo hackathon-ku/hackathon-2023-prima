@@ -81,7 +81,13 @@ function Catagories() {
                 <Grid item xs={4}>
                     <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => { navigation("/pages/Planner") }}>
                         <img src='https://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png' style={{ width: '60%', height: 'auto' }} alt="Home Icon" />
-                        <Typography style={centeredTextStyle}>Planner</Typography>
+                        <Typography style={centeredTextStyle}>Ku Planner</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => { navigation("/pages/Alert") }}>
+                        <img src='https://w7.pngwing.com/pngs/129/292/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon.png' style={{ width: '60%', height: 'auto' }} alt="Home Icon" />
+                        <Typography style={centeredTextStyle}>Ku Alert</Typography>
                     </Box>
                 </Grid>
             </Grid>

@@ -7,6 +7,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import uniActImg from '../assets/uni-act.png';
 import abilityImg from '../assets/ability-act.png';
 import socActImg from '../assets/soc-act.png';
+import BackBtn from '../components/BackBtn';
 
 function ActivityTranscript() {
     const centeredTextStyle = {
@@ -27,9 +28,7 @@ function ActivityTranscript() {
     const navigation = useNavigate();
     return (
         <div>
-            <ArrowBackIosNewIcon onClick={() => { navigation("/pages/Catagories") }} sx={{
-                pt: '10px'
-            }} />
+            <BackBtn/>
             <Stack direction='column' spacing={4}
             >
                 <Typography variant='h4' style={centeredTextStyle}>Activity Transcript</Typography>
@@ -79,6 +78,6 @@ function ActivityTranscript() {
             <Tabbar />
         </div>
     )
-}
+}   
 
 export default ActivityTranscript
