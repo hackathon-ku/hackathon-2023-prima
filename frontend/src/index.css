@@ -1,8 +1,8 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #104946;
+  background-color: #ffff;
 }
 
 body {
-  margin: 16;
+  margin: 0;
 }
