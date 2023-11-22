@@ -1,7 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 import React from 'react'
 import Box from '@mui/system/Box';
-import { DialogContent, Grid, Stack } from '@mui/material';
+import { DialogContent, Grid, Stack, Typography } from '@mui/material';
+import Tabbar from '../components/Tabbar';
 
 
 
@@ -15,21 +16,32 @@ const theme = createTheme({
           main: '#f50057',
         },
       },
+    typography: {
+        fontFamily: [
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+            'Montserrat'
+          ].join(','),
+    }
 })
 
 
 function HomePage() {
     const img_path = './src/assets/catagories'
-
+    const centeredTextStyle = { textAlign: 'center', };
   return (
+    <>
     <Box component="section" sx={{ 
-        height: '750.74px',
-        width: {
-            xs:'390px',//0
-            sm:'500px',//600
-            md:'832px',//900
-            lg:'1140px',//1200
-        },
+        height: '90%',
+        width: '80%',
         bgcolor: '#ffffff',
         position: 'fixed',
         top: '473px',
@@ -40,11 +52,11 @@ function HomePage() {
         }>
         <Stack spacing={6}>
             <Grid>
-                <div style={{marginLeft: 25, marginTop: 20, marginBottom: 0}}> Announce </div>
+                <div style={{marginLeft: 25, marginTop: 20, marginBottom: 0, fontSize: 24}}> Announce </div>
             </Grid>
-            <Grid container justifyContent={'center'} style={{marginTop: 20}} >
-                <Box sx={{width: '342px', height: '134px', bgcolor: '#104946', borderRadius: '25px', top:'20px'}}>
-
+            <Grid container justifyContent={'center'} style={{marginTop: 20}}  >
+                <Box sx={{display:'flex',width: '90%', height: '120px', bgcolor: '#104946', borderRadius: '25px', top:'20px'}}>
+                    <img src={img_path+'/graduation.png'} width={'100%'} />
                 </Box>
             </Grid>
 
@@ -52,29 +64,75 @@ function HomePage() {
         </Stack>
 
         <Stack>
-            <div style = {{marginLeft: 25, marginTop: 20, }}> Catagories </div>
+
+            <Stack direction={'row'}>
+            <div style = {{marginLeft: 25, marginTop: 20 , fontSize: 24}}> Catagories </div>
+            <div style = {{marginLeft: 110, marginTop: 25, fontSize: 12 }}> <a href = "">more</a> </div>
+            </Stack>
+            
+            
             <Grid container rowSpacing={6} columnSpacing={{xs:2 , sm:3, md:4}}>
                <Grid item xs={4}>
                     <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <img src={img_path+'/schedule.png'} style={{ width: '60%', height: 'auto' }} alt="Home Icon" />
+                        <img src={img_path+'/schedule.png'} style={{ width: '60%', height: 'auto' }} alt="Schedule Icon" />
+                        <Typography style={{centeredTextStyle, fontSize:10}}>Class Schedule</Typography>
+
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
                     <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <img src={img_path+'/map.png'} style={{ width: '40%', height: 'auto' }} alt="Home Icon" />
+                        <img src={img_path+'/map.png'} style={{ width: '40%', height: 'auto' }} alt="Map Icon" />
+                        <Typography style={{centeredTextStyle, fontSize:10}}>KU Map</Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
                     <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <img src={img_path+'/activity-trans.png'} style={{ width: '50%', height: 'auto' }} alt="Home Icon" />
+                        <img src={img_path+'/alert.png'} style={{ width: '50%', height: 'auto' }} alt="Alert Icon" />
+                        <Typography style={{centeredTextStyle, fontSize:10}}>KU Alert</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={img_path+'/activity-trans.png'} style={{ width: '50%', height: 'auto' }} alt="activity Icon" />
+                        <Typography style={{centeredTextStyle, fontSize:10}}>Activity Transcipt</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={img_path+'/planner.png'} style={{ width: '50%', height: 'auto' }} alt="Home Icon" />
+                        <Typography style={{centeredTextStyle, fontSize:10}}>KU Planner</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <img src={img_path+'/more.png'} style={{ width: '50%', height: 'auto' }} alt="add more " />
+                        <Typography style={{centeredTextStyle, fontSize:10}}>Add more Schedule</Typography>
                     </Box>
                 </Grid>
                 
             </Grid>
 
         </Stack>
-                     
+
+        <Stack>
+            <Grid>
+                <div style={{marginLeft: 25, marginTop: 20, fontSize: 24}}> News & Activity</div>
+            </Grid>
+
+            <Grid >
+                <Stack direction={'row'} spacing = {2} sx={{margin: '5%'}}>
+                <Box sx={{display:'flex',width: '150px', height: '151px', bgcolor: '#104946', borderRadius: '25px', top:'20px'}}>
+                    <img src={img_path+'/swiming.png'} width={'100%'} />
+                </Box>
+                <Box sx={{display:'flex',width: '150px', height: '151px', bgcolor: '#104946', borderRadius: '25px', top:'20px'}}>
+                    <img src={img_path+'/teaching.png'} width={'100%'} />
+                </Box>
+                </Stack>
+            </Grid>
+        </Stack>
     </Box>
+    <Tabbar/>
+    </>
   )
 }
 
