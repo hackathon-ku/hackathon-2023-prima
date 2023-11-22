@@ -3,7 +3,7 @@ import React from 'react'
 import Box from '@mui/system/Box';
 import { DialogContent, Grid, Stack, Typography } from '@mui/material';
 import Tabbar from '../components/Tabbar';
-import zIndex from '@mui/material/styles/zIndex';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -46,6 +46,7 @@ function HomePage() {
         zIndex: -1,
   
     }
+    const navigation = useNavigate()
     return (
         <div>
             <div style={homePageBackgroundStyle}></div>
@@ -79,7 +80,7 @@ function HomePage() {
 
                         <Stack direction={'row'}>
                             <div style={{ marginLeft: 25, marginTop: 20, fontSize: 24 }}> Catagories </div>
-                            <div style={{ position: 'fixed', marginLeft: '85%', marginTop: 25, fontSize: 12 }}> <a href="">more</a> </div>
+                            <div style={{ position: 'fixed', marginLeft: '85%', marginTop: 25, fontSize: 12 }}> <a onClick={() => {navigation("/pages/Catagories")}}>more</a> </div>
                         </Stack>
 
 
