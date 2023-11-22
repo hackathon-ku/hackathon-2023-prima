@@ -29,7 +29,6 @@ function HomePage() {
             sm:'500px',//600
             md:'832px',//900
             lg:'1140px',//1200
-            xl:'500px',//1536
         },
         bgcolor: '#ffffff',
         position: 'fixed',
