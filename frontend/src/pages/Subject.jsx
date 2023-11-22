@@ -1,8 +1,29 @@
 import React from 'react'
+import BackBtn from '../components/BackBtn'
+import { Box, Stack , Grid} from '@mui/material'
+import Timetable from 'react-scheduler-table'
 
 function Subject() {
+
+
   return (
-    <div>Subject</div>
+    <>
+    <BackBtn/>
+    <Stack spacing={3}>
+        <div style={{textAlign:'center' , height: '20%', marginTop: '10%' }}>
+            insert 
+        </div>
+        <Box>
+            <div style={{textAlign:'right' , marginRight: '8%'}}>Filter</div>
+        </Box>
+    </Stack>
+    <Stack position={'row'}>
+    
+    </Stack>
+
+    
+    </>
+    
   )
 }
 

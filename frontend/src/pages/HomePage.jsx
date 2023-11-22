@@ -92,7 +92,7 @@ function HomePage() {
                                 </Box>
                             </Grid>
                             <Grid item xs={4}>
-                                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick = {() => {navigation("/pages/Map")}}  >
                                     <img src={img_path + '/map.png'} style={{ width: '50%', height: 'auto' }} alt="Map Icon" />
                                     <Typography style={{ centeredTextStyle, fontSize: 10 }}>KU Map</Typography>
                                 </Box>
@@ -106,19 +106,19 @@ function HomePage() {
                             <Grid item xs={4}>
                                 <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <img src={img_path + '/activity-transcript.png'} style={{ width: '50%', height: 'auto' }} alt="activity Icon" />
-                                    <Typography style={{ centeredTextStyle, fontSize: 10 }}>Activity Transcipt</Typography>
+                                    <Typography style={{ centeredTextStyle, fontSize: 10 }}>Activity Transcript</Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={4}>
-                                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                                    <img src={img_path + '/planner.png'} style={{ width: '50%', height: 'auto' }} alt="Home Icon" />
-                                    <Typography style={{ centeredTextStyle, fontSize: 10 }}>KU Planner</Typography>
+                                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick = {() => {navigation("/pages/Planner")}}>
+                                    <img src={img_path + '/planner.png'} style={{ width: '50%', height: 'auto' } } alt="Home Icon" />
+                                    <Typography style={{ centeredTextStyle, fontSize: 10 }}><a onClick={() => {navigation("/pages/Planner")} }>KU Planner</a></Typography>
                                 </Box>
                             </Grid>
                             <Grid item xs={4}>
                                 <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <img src={img_path + '/more.png'} style={{ width: '50%', height: 'auto' }} alt="add more " />
-                                    <Typography style={{ centeredTextStyle, fontSize: 10 }}>Add more Schedule</Typography>
+                                    <Typography style={{ centeredTextStyle, fontSize: 10 }}>Add more</Typography>
                                 </Box>
                             </Grid>
 

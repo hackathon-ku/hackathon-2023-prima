@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import BackBtn from '../components/BackBtn';
+import Schedule from '../components/Schedule';
 
 function Planner() {
   const navigation = useNavigate()
