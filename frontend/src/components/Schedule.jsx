@@ -11,16 +11,6 @@ const Schedule = () => <Timetable
         startTime: new Date("2018-02-23T10:30:00"),
         endTime: new Date("2018-02-23T13:30:00"),
       },
-
-      {
-        id: 1,
-        name: "Custom Event 7",
-        type: "custom",
-        startTime: new Date("2018-02-23T12:00:00"),
-        endTime: new Date("2018-02-23T14:30:00"),
-
-
-      }
     ],
     tuesday: [],
     wednesday: [],
@@ -28,7 +18,7 @@ const Schedule = () => <Timetable
     friday: [],
     saturday: [],
   }}
-  style={{ height: '100%', border: '1px black solid' }}
+  style={{ display:'cover' , height: '500px', border: '1px black solid', overflow:'auto' }}
 />
 
 export default Schedule
