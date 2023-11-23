@@ -24,6 +24,7 @@ function Planner() {
   return (
     <div>
       <BackBtn />
+      <Schedule/>
       <Stack sx={{
         rowGap: '10px'
       }}>
