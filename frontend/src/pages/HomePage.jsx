@@ -93,7 +93,7 @@ function HomePage() {
                 </Box>
               </Grid>
               <Grid item xs={4}>
-                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick = {() => {navigation("/pages/Map")}}>
                   <img src={img_path + '/map.png'} style={{ width: '50%', height: 'auto' }} alt="Map Icon" />
                   <Typography style={{ centeredTextStyle, fontSize: 10 }}>KU Map</Typography>
                 </Box>

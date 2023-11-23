@@ -11,7 +11,7 @@ function SearchBar() {
     }}>
     <TextField
         id="input-with-icon-textfield"
-        label="ค้นหารายวิชา"
+        label="ค้นหา"
         InputProps={{
           endAdornment: (
             <InputAdornment position="start">

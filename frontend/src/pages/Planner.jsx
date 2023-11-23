@@ -1,12 +1,12 @@
 import { React, useEffect, useState }from 'react'
 import { useNavigate } from 'react-router-dom';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import BackBtn from '../components/BackBtn';
 import { Box, Stack, Table, Typography } from '@mui/material';
 import Tabbar from '../components/Tabbar';
 import SubjectCard from '../components/SubjectCard';
 import Axios from 'axios';
 import SearchBar from '../components/SearchBar';
+import Schedule from '../components/Schedule';
 
 function Planner() {
   const navigation = useNavigate()
