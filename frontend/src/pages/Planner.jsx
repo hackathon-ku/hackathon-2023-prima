@@ -9,6 +9,7 @@ import SearchBar from '../components/SearchBar';
 import Schedule from '../components/Schedule';
 
 function Planner() {
+  const navigation = useNavigate()
   const data = JSON.parse(window.localStorage.getItem("access_token"));
   const [subjectList, setSubjectList] = useState([]);
   useEffect(() => {
@@ -29,18 +30,25 @@ function Planner() {
         rowGap: '10px',
         marginBottom: '15%',
       }}>
-        <SearchBar/>
         <Schedule subjectList={subjectList}/>
-        <Typography marginLeft='5%'>รายละเอียดชั้นเรียน</Typography>
+        <Typography marginLeft='5%' sx={{display:'inline-flex', fontSize:'12px'}}>รายละเอียดชั้นเรียน
+        <div style={{marginLeft:'44%', width:'25%'}}>
+        <a onClick={() => { navigation("/pages/AllCourses") }} style={{textDecoration:'underline' , fontSize:'12px'}}> รายวิชาทั้งหมด</a>
+
+        </div>
+        </Typography>
+        
+
         {subjectList.map((subject, index) => (
-          <SubjectCard// Make sure to use a unique key for each element in the array
+          subject.enroll == 1 &&
+          (<SubjectCard// Make sure to use a unique key for each element in the array
             key={index}
             subject_id={subject.subject_id}
             subject={subject.subject}
             time={subject.date}
             place={subject.place}
             clr={subject.clr}
-          />
+          />)
         ))}
       </Stack>
       <Tabbar />

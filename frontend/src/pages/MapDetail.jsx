@@ -17,7 +17,7 @@ function MapDetail() {
   const {id} = useParams();
   const [facility, setFacility] = useState([])
   useEffect(()=>  {
-    axios.get(`http://localhost:5000/maps?id=${id}`).then((res) => {
+    axios.get(`http://localhost:5001/maps?id=${id}`).then((res) => {
       setMap(res.data);
       setFacility(res.data['facility']);
       

@@ -140,7 +140,7 @@ function HomePage() {
 
             <Stack direction={'row'}>
               <div style={{ marginLeft: 25, marginTop: 20, fontSize: 24 }}> Catagories </div>
-              <div style={{ position: 'absolute', marginLeft: '85%', marginTop: 25, fontSize: 12 }}> <a onClick={() => { navigation("/pages/Catagories") }}>more</a> </div>
+              <div style={{ position: 'absolute', marginLeft: '85%', marginTop: 25, fontSize: 12 }}> <a onClick={() => { navigation("/pages/Catagories") }}> See more</a> </div>
             </Stack>
 
 

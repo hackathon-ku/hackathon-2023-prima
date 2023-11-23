@@ -11,7 +11,8 @@
         "access": "D14-2",
         "profressor": "เสฎฐวิทย์ เกิดผล",
         "credit": 3,
-        "clr": "#860A35"
+        "clr": "#860A35",
+        "enroll": 1
     },
     {
         "subject_id": "01130172",
@@ -25,7 +26,8 @@
         "access": "N01-1",
         "profressor": "สุธาวัลย์ พฤกษ์อำไพ",
         "credit": 3,
-        "clr": "#FFD027"
+        "clr": "#FFD027",
+        "enroll": 1
     },
     {
         "subject_id": "01175168",
@@ -39,6 +41,22 @@
         "access": "ALL-All",
         "profressor": "วิทยา แก้วบังตู",
         "credit": 1,
-        "clr": "#5F6F52"
+        "clr": "#5F6F52",
+        "enroll": 1
+    },
+    {
+        "subject_id": "01418132",
+        "subject": "หลักมูลการคณา",
+        "date": "FRI 09:30-10:30",
+        "day": "fri",
+        "startTime": "2023-12-08T09:30",
+        "endTime": "2023-12-08T10:30",
+        "place": "SC45-709",
+        "sec": 1,
+        "access": "D13-All",
+        "profressor": "ผกาเกษ วัตุยา",
+        "credit": 3,
+        "clr": "#000000",
+        "enroll": 0
     }
 ]

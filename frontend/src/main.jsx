@@ -13,6 +13,7 @@ import Subjects from './pages/Subject.jsx';
 import MapDetail from './pages/MapDetail.jsx'
 import Map from './pages/Map.jsx'
 import EmergencyCall from './pages/EmergencyCall.jsx';
+import AllCourses from './pages/AllCourses.jsx';
 
 
 
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
   {
     path: "/pages/EmergencyCall",
     element: <EmergencyCall />
+  },
+  {
+    path: "pages/AllCourses",
+    element: <AllCourses/>
   }
 
 
