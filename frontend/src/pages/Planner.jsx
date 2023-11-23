@@ -13,7 +13,7 @@ function Planner() {
   const [subjectList, setSubjectList] = useState([]);
   useEffect(() => {
     // Use useEffect to fetch data when the component mounts
-    Axios.get('http://localhost:5000/subjects')
+    Axios.get('http://localhost:5001/subjects')
       .then((response) => {
         setSubjectList(response.data);
       })
@@ -29,8 +29,8 @@ function Planner() {
         rowGap: '10px',
         marginBottom: '15%',
       }}>
-        <Schedule subjectList={subjectList}/>
         <SearchBar/>
+        <Schedule subjectList={subjectList}/>
         <Typography marginLeft='5%'>รายละเอียดชั้นเรียน</Typography>
         {subjectList.map((subject, index) => (
           <SubjectCard// Make sure to use a unique key for each element in the array

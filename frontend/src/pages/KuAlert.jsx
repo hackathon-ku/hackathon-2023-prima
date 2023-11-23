@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import BackBtn from '../components/BackBtn';
 import { Alert, AlertTitle, Box, Button, Dialog, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-
-
-import photoImg from '../assets/photo.png';
 import TxtField from '../components/TxtField';
 
 function KuAlert() {
+
+    const navigation = useNavigate();
+
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -26,8 +26,6 @@ function KuAlert() {
         setFile(URL.createObjectURL(e.target.files[0]));
 
     }
-
-
     return (
         <div>
             <BackBtn />
@@ -35,6 +33,10 @@ function KuAlert() {
                 padding: '20px',
                 rowGap: 2
             }}>
+                    <div style={{justifyItems:'right'}}>
+                    <div style={{width:'43%',display:'inline-block', borderRadius:25,padding:'2% 3%',backgroundColor:'#FFDB5B', marginRight:'0%'}}
+                    ><a onClick = {() => {navigation("/pages/EmergencyCall")}}>Emergency Contact</a></div>
+                    </div>
                 <Box sx={{
 
                     bgcolor: '#D9D9D9',

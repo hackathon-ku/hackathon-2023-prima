@@ -12,13 +12,17 @@ const Schedule = ({ subjectList }) => {
   };
 
   subjectList.map((subject, index) => {
-    events[subject.day].push({
-      id: subject.id,
-      name: subject.subject,
-      type: 'custom',
-      startTime: new Date(subject.startTime),
-      endTime: new Date(subject.endTime),
-    });
+    if(subject.enroll != 0){
+      events[subject.day].push({
+        id: subject.id,
+        name: subject.subject,
+        type: 'custom',
+        startTime: new Date(subject.startTime),
+        endTime: new Date(subject.endTime),
+      });
+    } else {
+      return null;
+    }
     return null;
   });
 
