@@ -54,6 +54,8 @@ function KuAlert() {
                     }}>
                         <input id="input-file" type="file" onChange={handleChange} style={{ display: 'flex', opacity: 0, width: '400px', height: '290px' }} />
                         <img src={file} style={{ width: '100%', height: '100%' }}></img>
+                    </Box>   
+                 </Box>
                 <Box>
                     <Typography>สถานที่เกิดเหตุ</Typography>
                     <TxtField label="ระบุสถานที่" />
