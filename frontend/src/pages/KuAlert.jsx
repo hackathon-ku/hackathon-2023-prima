@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Tabbar from '../components/Tabbar'
 import { useNavigate } from 'react-router-dom';
 import BackBtn from '../components/BackBtn';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Alert, AlertTitle, Box, Button, Dialog, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 import photoImg from '../assets/photo.png';
 import TxtField from '../components/TxtField';
 
 function KuAlert() {
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+      };
+      const handleClose = () => {
+        setOpen(false);
+      };
+    
     return (
         <div>
             <BackBtn />
@@ -30,11 +41,11 @@ function KuAlert() {
                 </Box>
                 <Box>
                     <Typography>สถานที่เกิดเหตุ</Typography>
-                    <TxtField label="ระบุสถานที่"/>
+                    <TxtField label="ระบุสถานที่" />
                 </Box>
                 <Box>
                     <Typography>รายละเอียดเหตุการณ์</Typography>
-                    <TxtField label="รายละเอียด"/>
+                    <TxtField label="รายละเอียด" />
                 </Box>
                 <Box sx={{
                     display: 'flex',
@@ -45,9 +56,31 @@ function KuAlert() {
                         color: '#ffff',
                         width: '20%',
                         marginLeft: 'auto'
-                    }}>Submit</Button>
+                    }} onClick={handleClickOpen}>Submit</Button>
                 </Box>
+
             </Stack>
+            <Dialog
+                open={open}
+                onClose={() => setOpen(false)}
+            >
+            <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+            <Alert severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    ข้อมูลได้ถูกส่งให้หน่วยงานที่เกี่ยวข้องเรียบร้อยแล้ว
+                </Alert>
+            </Dialog>
             <Tabbar />
         </div>
     )

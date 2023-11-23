@@ -1,10 +1,11 @@
 import { createTheme } from '@mui/material/styles';
-import { React, useState } from 'react'
+import { React, useEffect, useState } from 'react'
 import Box from '@mui/system/Box';
 import { DialogContent, Grid, Stack, Typography } from '@mui/material';
 import Tabbar from '../components/Tabbar';
 import { useNavigate } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import axios from 'axios';
 
 
 
@@ -39,6 +40,8 @@ const theme = createTheme({
 function HomePage() {
   const img_path = './src/assets/catagories'
   const centeredTextStyle = { textAlign: 'center', };
+  const [id, setId] = useState("6510451131");
+  const [student, setStudent] = useState([]);
   const homePageBackgroundStyle = {
     height: '100vh',// Make the page full screen
   }
@@ -47,6 +50,13 @@ function HomePage() {
   }
   const navigation = useNavigate()
   let [name, setName] = useState("Guest");
+  useEffect(()=>  {
+    axios.get(`http://localhost:5000/students/id?id=${id}`).then((res) => {
+      setStudent(res.data)
+    });
+  },[])
+  console.log(student)
+  name = (student ? student.first_name : name) 
   return (
     <div style={homePageBackgroundStyle}>
       <Stack>
@@ -99,19 +109,19 @@ function HomePage() {
                 </Box>
               </Grid>
               <Grid item xs={4}>
-                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => { navigation("/pages/Alert") }}>
                   <img src={img_path + '/alert.png'} style={{ width: '50%', height: 'auto', marginBottom: 0 }} alt="Alert Icon" />
                   <Typography style={{ centeredTextStyle, fontSize: 10 }}>KU Alert</Typography>
                 </Box>
               </Grid>
               <Grid item xs={4}>
-                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => { navigation("/pages/ActivityTranscript") }}>
                   <img src={img_path + '/activity-transcript.png'} style={{ width: '50%', height: 'auto' }} alt="activity Icon" />
                   <Typography style={{ centeredTextStyle, fontSize: 10 }}>Activity Transcipt</Typography>
                 </Box>
               </Grid>
               <Grid item xs={4}>
-                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onClick={() => { navigation("/pages/Planner") }}>
                   <img src={img_path + '/planner.png'} style={{ width: '50%', height: 'auto' }} alt="Home Icon" />
                   <Typography style={{ centeredTextStyle, fontSize: 10 }}>KU Planner</Typography>
                 </Box>

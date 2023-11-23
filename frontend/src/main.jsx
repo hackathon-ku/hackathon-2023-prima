@@ -46,7 +46,7 @@ const router = createBrowserRouter([
     element: <Map/>
   },
   {
-    path: "/pages/MapDetail",
+    path: "/pages/MapDetail/:id",
     element: <MapDetail/>
   }
   

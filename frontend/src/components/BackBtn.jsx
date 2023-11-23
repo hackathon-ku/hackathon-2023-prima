@@ -3,11 +3,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-function BackBtn() {
+function BackBtn({path}) {
     const navigation = useNavigate()
+    path = path ? path:"/pages/Catagories";
     return (
         <div style={{ backgroundColor: '#104946' }}>
-            <ArrowBackIosNewIcon onClick={() => { navigation("/pages/Catagories") }} sx={{
+            <ArrowBackIosNewIcon onClick={() => { navigation(path) }} sx={{
                 pt: '10px',
                 margin: '16px',
                 paddingTop: '10px',

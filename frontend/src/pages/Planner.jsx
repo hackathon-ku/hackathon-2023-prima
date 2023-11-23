@@ -9,7 +9,6 @@ import SearchBar from '../components/SearchBar';
 import Schedule from '../components/Schedule';
 
 function Planner() {
-  const navigation = useNavigate()
   const [subjectList, setSubjectList] = useState([]);
   useEffect(() => {
     // Use useEffect to fetch data when the component mounts
