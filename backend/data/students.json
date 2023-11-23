@@ -6,7 +6,8 @@
         "age": 19,
         "year": 2,
         "faculty_id": "D",
-        "department_id": "14"
+        "department_id": "14",
+        "password": "1234"
     },
     {
         "student_id": "6510450658",
@@ -15,7 +16,18 @@
         "age": 20,
         "year": 2,
         "faculty_id": "D",
-        "department_id": "14"
+        "department_id": "14",
+        "password": "1234"
+    },
+    {
+        "student_id": "6610501300",
+        "first_name": "Atiwut",
+        "last_name": "Suwan",
+        "age": 19,
+        "year": 2,
+        "faculty_id": "E",
+        "department_id": "13",
+        "password": "1234"
     }
 
 ]

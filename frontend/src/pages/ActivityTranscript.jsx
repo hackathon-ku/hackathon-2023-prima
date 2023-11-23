@@ -10,6 +10,7 @@ import socActImg from '../assets/soc-act.png';
 import BackBtn from '../components/BackBtn';
 
 function ActivityTranscript() {
+    const data = JSON.parse(window.localStorage.getItem("access_token"));
     const centeredTextStyle = {
         textAlign: 'center',
     };

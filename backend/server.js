@@ -1,7 +1,11 @@
 const express = require('express');
 const fs = require('fs/promises');
 const cors = require('cors');
+const bodyParser= require('body-parser');
 const app = express();
+
+app.use(bodyParser.json())
+app.use(express.json())
 app.use(cors());
 
 
@@ -58,7 +62,27 @@ app.get('/maps', async(req, res) => {
     console.error('Error reading JSON file:', error);
     res.status(500).json({ error: 'Internal Server Error'});
   }
-})
+});
+app.post('/login', async (req, res) => {
+  try { 
+    const data = req.body;
+    console.log(data);
+    const student = await fs.readFile('./data/students.json', 'utf-8');
+    const jsonData = JSON.parse(student);
+    for (let i = 0; i< jsonData.length; i ++) {
+      if (jsonData[i]['student_id'] === data['student_id']){
+        if (jsonData[i]['password'] === data['password']){
+          console.log(jsonData[i]);
+          res.send(jsonData[i]);
+
+        }
+      }
+    }
+    res.status(403);
+  }catch (err){
+    res.send(err).status(500)
+  }
+}) 
 
 app.listen(5000, () => {
   console.log(`Server listening at http://localhost:5000`);
