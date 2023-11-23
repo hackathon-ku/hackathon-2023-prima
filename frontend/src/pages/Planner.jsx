@@ -9,6 +9,7 @@ import SearchBar from '../components/SearchBar';
 import Schedule from '../components/Schedule';
 
 function Planner() {
+  const data = JSON.parse(window.localStorage.getItem("access_token"));
   const [subjectList, setSubjectList] = useState([]);
   useEffect(() => {
     // Use useEffect to fetch data when the component mounts

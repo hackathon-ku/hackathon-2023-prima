@@ -12,13 +12,16 @@ import { ThemeProvider } from '@emotion/react';
 import Subject from './pages/Subject.jsx';
 import MapDetail from './pages/MapDetail.jsx'
 import Map from './pages/Map.jsx'
-
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App />,
+  },
+  {
+    path: "/id/:id",
     element: <App />,
   },
   {
@@ -56,7 +59,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} />
+    {/* <AuthProvider> */}
+    <RouterProvider router={router} />
+    {/* </AuthProvider> */}
     </ThemeProvider>
   </React.StrictMode>,
 )
