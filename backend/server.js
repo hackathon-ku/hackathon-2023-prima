@@ -63,6 +63,28 @@ app.get('/maps', async(req, res) => {
     res.status(500).json({ error: 'Internal Server Error'});
   }
 });
+
+
+app.get('/maps/name', async (req, res) => {
+  try {
+    const query = req.query['name'];
+    const data = await fs.readFile('./data/maps.json', 'utf-8');
+    const jsonData = JSON.parse(data);
+
+    const result = jsonData.find((item) => item.name === query);
+
+    if (result) {
+      res.status(200).json(result);
+    } else {
+      res.status(404).json({ error: 'Map not found' });
+    }
+  } catch (error) {
+    console.error('Error reading JSON file:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 app.post('/login', async (req, res) => {
   try { 
     const data = req.body;

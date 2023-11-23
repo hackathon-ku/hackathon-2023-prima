@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 function BackBtn({path}) {
     const navigation = useNavigate()
-    path = path ? path:"/pages/Catagories";
+    path = path ? path:"/";
     return (
         <div style={{ backgroundColor: '#104946' }}>
             <ArrowBackIosNewIcon onClick={() => { navigation(path) }} sx={{
