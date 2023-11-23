@@ -39,23 +39,25 @@ function KuAlert() {
 
                     bgcolor: '#D9D9D9',
                     borderRadius: '20px',
-                    padding: '20px',
+                    padding: '0px',
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    minHeight: "300px",
+                    minHeight: "300px"
                 }}>
                     <Box sx={{
                         display: 'flex',
                         width: '100%',
-                        height: 'auto',
+                        height: '100%',
                         borderRadius: '20px',
+                        backgroundImage: `url(${file})`,
+                        backgroundSize: 'contain',
                     }}>
                         <input id="input-file" type="file" onChange={handleChange} style={{ display: 'flex', opacity: 0, width: '400px', height: '290px' }} />
-                        <img src={file} style={{ width: '100%', height: '100%' }}></img>
-                    </Box>   
-                 </Box>
+                    </Box>
+                </Box>
+                
                 <Box>
                     <Typography>สถานที่เกิดเหตุ</Typography>
                     <TxtField label="ระบุสถานที่" />
