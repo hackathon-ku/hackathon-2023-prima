@@ -54,7 +54,7 @@ function KuAlert() {
                         height: '100%',
                         borderRadius: '20px',
                         backgroundImage: `url(${file})`,
-                        backgroundSize: 'contain',
+                        backgroundSize: 'cover',
                     }}>
                         <input id="input-file" type="file" onChange={handleChange} style={{ display: 'flex', opacity: 0, width: '400px', height: '290px' }} />
                     </Box>

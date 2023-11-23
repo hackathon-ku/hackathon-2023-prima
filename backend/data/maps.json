@@ -1,24 +1,21 @@
 [
     {
         "id": 1,
-        "place": "วิศวะอุตสาหการ",
-        "nickname": ["IE", "ie"],
+        "name": "วิศวะอุตสาหการ",    
         "facility": ["7-eleven", "fitness", "ที่จอดรถ"],
         "_img": "ieImg",
         "link": "https://maps.app.goo.gl/aDzJA8AA86NF88dj9?g_st=ic"
     },
     {
         "id": 2,
-        "place": "ศูนย์เรียนรวม 1",
-        "nickname": ["ศร.1", "ศร1"],
+        "name": "ศูนย์เรียนรวม 1",
         "facility": ["ร้านข้าว", "atm", "จุดจอด beam"],
         "_img": "lh1Img",
         "link": "https://maps.app.goo.gl/Y6rVVC9iaL8U9LF99"
     },
     {
         "id": 3,
-        "place": "บริหารธุรกิจ",
-        "nickname": ["ิBA-4", "ba4"],
+        "name": "บริหารธุรกิจ",
         "facility": ["a-store", "วินมอเตอร์ไซต์"],
         "_img": "ba4Img",
         "link": "https://maps.app.goo.gl/2iBmeBmcUaboDCQ79"
