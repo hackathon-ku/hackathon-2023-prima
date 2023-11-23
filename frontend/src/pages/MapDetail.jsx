@@ -2,9 +2,6 @@ import lh1Img from '../assets/lh1.png';
 import ieImg from '../assets/ie.png';
 import ba4Img from '../assets/ba4.png';
 import pinIcon from '../assets/564px-Map_pin_icon.svg.png';
-import sevenEleven from '../assets/69986.png';
-import dumbby from '../assets/1053916.png';
-import parkky from '../assets/2343894.png';
 import '../assets/styles/ku-map.css';
 import BackBtn from '../components/BackBtn';
 import '../assets/styles/map-detail.css';
@@ -13,14 +10,15 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 function MapDetail() {
-  const [kuMap, setMap] = useState({})
+  const [kuMap, setMap] = useState([])
   const {id} = useParams();
   const [facility, setFacility] = useState([])
+  const [mainName, setMainName] = useState("")
   useEffect(()=>  {
     axios.get(`http://localhost:5000/maps?id=${id}`).then((res) => {
       setMap(res.data);
       setFacility(res.data['facility']);
-      
+      setMainName(res.data['name'])
     });
   },[])
   const picMap = new Map();
@@ -41,26 +39,6 @@ function MapDetail() {
     height: '2vh'
   };
 
-  const sevenElevenIconStyle = {
-    backgroundImage: `url(${sevenEleven})`,
-    backgroundSize: 'cover',
-    width: '7vw',
-    height: '7vw'
-  }
-
-  const dumb = {
-    backgroundImage: `url(${dumbby})`,
-    backgroundSize: 'cover',
-    width: '7vw',
-    height: '7vw'
-  }
-
-  const park = {
-    backgroundImage: `url(${parkky})`,
-    backgroundSize: 'cover',
-    width: '7vw',
-    height: '7vw'
-  }
 
 
   return (
@@ -70,7 +48,7 @@ function MapDetail() {
       <h1>KU Map</h1>
       <div id='forPic' style={divStyle}></div>
       <div id='forName'>
-        <h2>{kuMap.place}</h2>
+        <h2>{mainName}</h2>
       </div>
       <div id='forDes'>
         <h3>สิ่งอำนวยความสะดวก</h3>

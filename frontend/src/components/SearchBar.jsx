@@ -7,20 +7,16 @@ import SearchIcon from '@mui/icons-material/Search';
 function SearchBar() {
   return (
     <Stack sx= {{
-        margin: '24px'
+        margin: '24px',
+        display: 'flex',
+        flexDirection: 'row'
     }}>
     <TextField
         id="input-with-icon-textfield"
         label="ค้นหา"
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ), sx: { borderRadius: 25}
-        }}
         variant="outlined"
       />
+      <SearchIcon />
     </Stack>
   )
 }
