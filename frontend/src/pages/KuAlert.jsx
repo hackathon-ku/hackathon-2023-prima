@@ -14,11 +14,20 @@ function KuAlert() {
 
     const handleClickOpen = () => {
         setOpen(true);
-      };
-      const handleClose = () => {
+    };
+    const handleClose = () => {
         setOpen(false);
-      };
-    
+    };
+
+    const [file, setFile] = useState();
+
+    function handleChange(e) {
+        console.log(e.target.files[0]);
+        setFile(URL.createObjectURL(e.target.files[0]));
+
+    }
+
+
     return (
         <div>
             <BackBtn />
@@ -27,6 +36,7 @@ function KuAlert() {
                 rowGap: 2
             }}>
                 <Box sx={{
+
                     bgcolor: '#D9D9D9',
                     borderRadius: '20px',
                     padding: '20px',
@@ -36,9 +46,16 @@ function KuAlert() {
                     alignItems: "center",
                     minHeight: "300px",
                 }}>
-                    <img src={photoImg} style={{ width: '15%', height: 'auto' }}></img>
-                    <Typography>Add picture</Typography>
-                </Box>
+                    <Box sx={{
+                        display: 'flex',
+                        width: '100%',
+                        height: 'auto',
+                        borderRadius: '20px',
+                    }}>
+                        <input id="input-file" type="file" onChange={handleChange} style={{ display: 'flex', opacity: 0, width: '400px', height: '290px' }} />
+                        <img src={file} style={{ width: '100%', height: '100%' }}></img>
+                    </Box>   
+                 </Box>
                 <Box>
                     <Typography>สถานที่เกิดเหตุ</Typography>
                     <TxtField label="ระบุสถานที่" />
@@ -64,19 +81,19 @@ function KuAlert() {
                 open={open}
                 onClose={() => setOpen(false)}
             >
-            <IconButton
-          aria-label="close"
-          onClick={handleClose}
-          sx={{
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: (theme) => theme.palette.grey[500],
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
-            <Alert severity="success">
+                <IconButton
+                    aria-label="close"
+                    onClick={handleClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
+                <Alert severity="success">
                     <AlertTitle>Success</AlertTitle>
                     ข้อมูลได้ถูกส่งให้หน่วยงานที่เกี่ยวข้องเรียบร้อยแล้ว
                 </Alert>
