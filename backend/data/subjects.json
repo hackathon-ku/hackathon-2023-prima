@@ -1,0 +1,62 @@
+[
+    {
+        "subject_id": "01418322",
+        "subject": "วิทยาการข้อมูลเบื้องต้น",
+        "date": "THU 9:00-11:00",
+        "day": "thu",
+        "startTime": "2023-12-05T09:00",
+        "endTime": "2023-12-05T12:00",
+        "place": "SC45-710",
+        "sec": 1,
+        "access": "D14-2",
+        "profressor": "เสฎฐวิทย์ เกิดผล",
+        "credit": 3,
+        "clr": "#860A35",
+        "enroll": 1
+    },
+    {
+        "subject_id": "01130172",
+        "subject": "การบัญชีเพื่อการจัดการ",
+        "date": "WED 9:00-12:00",
+        "day": "wed",
+        "startTime": "2023-12-06T09:00",
+        "endTime": "2023-12-06T12:00",
+        "place": "BA 4-403",
+        "sec": 1,
+        "access": "N01-1",
+        "profressor": "สุธาวัลย์ พฤกษ์อำไพ",
+        "credit": 3,
+        "clr": "#FFD027",
+        "enroll": 1
+    },
+    {
+        "subject_id": "01175168",
+        "subject": "การวิ่งเหยาะเพื่อสุขภาพ",
+        "date": "FRI 16:30-18:30",
+        "day": "fri",
+        "startTime": "2023-12-08T16:30",
+        "endTime": "2023-12-08T18:30",
+        "place": "สนามอินทรีย์",
+        "sec": 11,
+        "access": "ALL-All",
+        "profressor": "วิทยา แก้วบังตู",
+        "credit": 1,
+        "clr": "#5F6F52",
+        "enroll": 1
+    },
+    {
+        "subject_id": "01418132",
+        "subject": "หลักมูลการคณา",
+        "date": "FRI 09:30-10:30",
+        "day": "fri",
+        "startTime": "2023-12-08T09:30",
+        "endTime": "2023-12-08T10:30",
+        "place": "SC45-709",
+        "sec": 1,
+        "access": "D13-All",
+        "profressor": "ผกาเกษ วัตุยา",
+        "credit": 3,
+        "clr": "#000000",
+        "enroll": 0
+    }
+]

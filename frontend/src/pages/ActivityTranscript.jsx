@@ -10,6 +10,7 @@ import socActImg from '../assets/soc-act.png';
 import BackBtn from '../components/BackBtn';
 
 function ActivityTranscript() {
+    const data = JSON.parse(window.localStorage.getItem("access_token"));
     const centeredTextStyle = {
         textAlign: 'center',
     };
@@ -29,7 +30,7 @@ function ActivityTranscript() {
     return (
         <div>
             <BackBtn/>
-            <Stack direction='column' spacing={4}
+            <Stack direction='column' spacing={3}
             >
                 <Typography variant='h4' style={centeredTextStyle}>Activity Transcript</Typography>
                 <Box display='flex' justifyContent='center' alignItems='center'>
