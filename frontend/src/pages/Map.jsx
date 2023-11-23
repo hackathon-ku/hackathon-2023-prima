@@ -3,13 +3,15 @@
   import BackBtn from '../components/BackBtn'
   import SearchBar from '../components/SearchBar'
   import MapDetail from './MapDetail'
-  import { Box, TextField, } from '@mui/material'
+  import { AlertTitle, Box, Dialog, IconButton, TextField, Alert } from '@mui/material'
   import MapImage from '../assets/Map.png'
   import Marker from '../components/Marker'
   import { useNavigate, useNavigation } from 'react-router-dom';
   import InputAdornment from '@mui/material/InputAdornment';
   import SearchIcon from '@mui/icons-material/Search';
   import axios from 'axios'
+  import CloseIcon from '@mui/icons-material/Close';
+
 
 
 
@@ -17,6 +19,7 @@
     const navigation = useNavigate()
     const [data, setData] = useState({});
     const [id, setId] = useState(0);
+    const [open, setOpen] = useState(false);
     let num = 0;
 
     const handleSearchSubmit = () => {
@@ -25,13 +28,13 @@
   
     const fetchData = async () => {
       try {
-        await axios.get(`http://localhost:5000/maps/name?name=${txt}`).then(function (res) {
+        await axios.get(`http://localhost:5001/maps/name?name=${txt}`).then(function (res) {
           const responseData = res.data;
           num = parseInt(responseData.id);
           console.log(num)
         });
       } catch (error) {
-        console.error('Error fetching data:', error);
+        setOpen(true);
         throw error; // rethrow the error so that the calling function can handle it
       }
     };
@@ -130,7 +133,27 @@
           <Marker key={index} data={data}/>
         ))}
         </Box>
-
+        <Dialog
+                open={open}
+                onClose={() => setOpen(false)}
+            >
+                <IconButton
+                    aria-label="close"
+                    onClick={() => {setOpen(false)}}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                >
+                    <CloseIcon/>
+                </IconButton>
+                <Alert severity="error">
+                    <AlertTitle>Error</AlertTitle>
+                    ขออภัยในความไม่สะดวกพื้นที่ดังกล่าวอยู้ระหว่างการพัฒนา
+                </Alert>
+            </Dialog>
         <Tabbar />
       </>
 
