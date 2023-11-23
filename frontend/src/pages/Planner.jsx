@@ -25,10 +25,11 @@ function Planner() {
   return (
     <div>
       <BackBtn />
-      <Schedule/>
       <Stack sx={{
-        rowGap: '10px'
+        rowGap: '10px',
+        marginBottom: '15%',
       }}>
+        <Schedule subjectList={subjectList}/>
         <SearchBar/>
         <Typography marginLeft='5%'>รายละเอียดชั้นเรียน</Typography>
         {subjectList.map((subject, index) => (
@@ -36,7 +37,7 @@ function Planner() {
             key={index}
             subject_id={subject.subject_id}
             subject={subject.subject}
-            time={subject.time}
+            time={subject.date}
             place={subject.place}
             clr={subject.clr}
           />

@@ -1,24 +1,40 @@
-import * as React from 'react'
-import Timetable from 'react-timetable-events'
+import * as React from 'react';
+import Timetable from 'react-timetable-events';
 
-const Schedule = () => <Timetable
-  events={{
-    monday: [
-      {
-        id: 1,
-        name: "Custom Event 1",
-        type: "custom",
-        startTime: new Date("2018-02-23T10:30:00"),
-        endTime: new Date("2018-02-23T13:30:00"),
-      },
-    ],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-    saturday: [],
-  }}
-  style={{ display:'cover' , height: '500px', border: '1px black solid', overflow:'auto' }}
-/>
+const Schedule = ({ subjectList }) => {
+  const events = {
+    mon: [],
+    tue: [],
+    wed: [],
+    thu: [],
+    fri: [],
+    sat: [],
+  };
 
-export default Schedule
+  subjectList.map((subject, index) => {
+    events[subject.day].push({
+      id: subject.id,
+      name: subject.subject,
+      type: 'custom',
+      startTime: new Date(subject.startTime),
+      endTime: new Date(subject.endTime),
+    });
+    return null;
+  });
+
+  return (
+    <Timetable
+      events={events}
+      style={{ 
+        display: 'cover', 
+        height: '500px', 
+        border: '1px black solid', 
+        overflow: 'auto', 
+        margin: '16px',
+        borderRadius: '10px',
+        }}
+    />
+  );
+};
+
+export default Schedule;

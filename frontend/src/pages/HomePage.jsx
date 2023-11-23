@@ -130,7 +130,6 @@ function HomePage() {
               <Grid container justifyContent={'center'} style={{ marginTop: 20 }}  >
                 <Box sx={{ display: 'flex', width: '90%', height: '120px', bgcolor: '#104946', borderRadius: '25px', top: '20px' }}>
                   <img src={gdaImg} width={'100%'} />
-                  <img src={gdaImg} width={'100%'} />
                 </Box>
               </Grid>
             </div>
